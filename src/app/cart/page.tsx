@@ -14,13 +14,13 @@ const Cart = () => {
     const userSessionLocal = localStorage.getItem("userSession")
     setUserSession(JSON.parse(userSessionLocal!))
     !userSession?.token && router.push("/cart")
-  },[])
+  },[router, userSession?.token])
   
   useEffect(()=>{
     if(userSession?.userData.name) {
       userSession?.userData.name === undefined && router.push("/login")
     }
-      } , [userSession?.userData])
+      } , [userSession?.userData, router])
 
     return (
       <div className="flex flex-col bg-gray-700 rounded-lg">

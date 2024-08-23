@@ -21,19 +21,18 @@ const OrdersPage = () => {
     if (userData?.userData.name) {
       userData?.userData.name === undefined ? router.push("/login") : fetchData();
     }
-  }, [userData?.userData]);
+  }, [userData?.userData, router, fetchData]);
 
-  // Función para determinar la clase de color basada en el estado del pedido
-  const getStatusClass = (status: string) => {
+    const getStatusClass = (status: string) => {
     switch (status.toLowerCase()) {
       case 'approved':
-        return 'text-green-600'; // Verde para aprobado
+        return 'text-green-600'; 
       case 'pending':
-        return 'text-yellow-600'; // Amarillo para pendiente
+        return 'text-yellow-600';
       case 'rejected':
-        return 'text-red-600'; // Rojo para rechazado
+        return 'text-red-600'; 
       default:
-        return 'text-gray-600'; // Gris para estados desconocidos
+        return 'text-gray-600';
     }
   };
 

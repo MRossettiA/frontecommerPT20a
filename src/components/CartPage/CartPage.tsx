@@ -32,7 +32,7 @@ const CartPage = () => {
     if (!userSession?.userData.name) {
       router.push("/login");
     }
-  }, [userSession?.userData]);
+  }, [userSession?.userData, router]);
 
   const handleClick = async () => {
     const idProducts = cart.map((product) => product.id);

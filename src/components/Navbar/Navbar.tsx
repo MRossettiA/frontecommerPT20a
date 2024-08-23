@@ -1,5 +1,5 @@
 "use client";
-
+import Image from 'next/image';
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import categoriesToPreLoad from "@/helpers/preLoadCategories";
@@ -59,11 +59,12 @@ const Navbar = () => {
         <div className="flex justify-center items-center">
           <Link href="/">
             <div className="flex ">
-              <img
-                src="/logo/logo-removebg-preview.png"
-                alt="X Logo"
-                width={100}
-              />
+            <Image
+  src="/logo/logo-removebg-preview.png"
+  alt="X Logo"
+  width={100}
+  height={100} 
+/>
               <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900">
                 {" "}
                 ELECTRO OUTLET{" "}
