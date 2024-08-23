@@ -7,7 +7,7 @@ import React from "react";
 const DetailProduct: React.FC<DetailProductProps> = async ({ params }) => {
   const { productID } = params;
   const product = await getProductById(productID);
-  console.log(product);
+
   
   return (
     <div className="flex justify-center p-4">
