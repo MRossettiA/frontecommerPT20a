@@ -61,7 +61,7 @@ const Register = () => {
             type="text"
             value={dataUser.name}
             onChange={handleChange}
-            placeholder="Ingresa tu nombre"
+            placeholder="Enter your name"
             className="border rounded-lg p-2 mt-1 outline-none focus:border-blue-500"
           />
           {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
@@ -82,7 +82,7 @@ const Register = () => {
         </div>
 
         <div className="flex flex-col">
-          <label htmlFor="password" className="font-semibold text-white">Password:</label>
+          <label htmlFor="Password" className="font-semibold text-white">Password:</label>
           <input
             id="password"
             name="password"
@@ -102,7 +102,7 @@ const Register = () => {
             type="text"
             value={dataUser.address}
             onChange={handleChange}
-            placeholder="Ingresa tu dirección"
+            placeholder="Enter your address"
             className="border rounded-lg p-2 mt-1 outline-none focus:border-blue-500"
           />
           {errors.address && <span className="text-red-500 text-sm">{errors.address}</span>}
@@ -115,7 +115,7 @@ const Register = () => {
             type="text"
             value={dataUser.phone}
             onChange={handleChange}
-            placeholder="Ingresa tu número de teléfono"
+            placeholder="Enter your phone number"
             className="border rounded-lg p-2 mt-1 outline-none focus:border-blue-500 bg-gray-200"
           />
           {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
