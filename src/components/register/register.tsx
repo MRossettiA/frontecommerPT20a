@@ -82,7 +82,7 @@ const Register = () => {
         </div>
 
         <div className="flex flex-col">
-          <label htmlFor="Password" className="font-semibold text-white">Password:</label>
+          <label htmlFor="password" className="font-semibold text-white">Password:</label>
           <input
             id="password"
             name="password"

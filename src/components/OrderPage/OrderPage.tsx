@@ -21,9 +21,10 @@ const OrdersPage = () => {
     if (userData?.userData.name) {
       userData?.userData.name === undefined ? router.push("/login") : fetchData();
     }
-  }, [userData?.userData, router, fetchData]);
+  }, [userData?.userData]);
 
-    const getStatusClass = (status: string) => {
+  
+  const getStatusClass = (status: string) => {
     switch (status.toLowerCase()) {
       case 'approved':
         return 'text-green-600'; 

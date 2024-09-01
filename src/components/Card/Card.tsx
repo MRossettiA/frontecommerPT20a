@@ -15,7 +15,7 @@ export const Card: React.FC<CardProps> = ({
           src={image}
           alt={`Imagen del producto ${name}`}
           className="w-full h-full object-cover"
-          style={{ objectFit: 'contain' }} // Ajusta la imagen sin recortar
+          style={{ objectFit: 'contain' }} 
         />
       </div>
       <div className="mt-4">

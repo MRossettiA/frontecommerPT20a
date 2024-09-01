@@ -13,16 +13,16 @@ export async function register(userData: IRegisterProps) {
         },
         body: JSON.stringify(userData)
          });
-         if(res.ok){
-            return res.json()
-         } else {
-            throw Error("faild to register")
-         }
-   
-  } catch (error: any) {
-    throw new Error(error)  }
-}
-
+         if (!res.ok) {
+          const errorData = await res.json(); // Obtener los detalles del error
+          throw new Error(`Error ${res.status}: ${errorData.message || "Failed to register"}`);
+        }
+       return await res.json();
+      } catch (error: any) {
+        console.error("Registration error:", error.message);
+        throw new Error(error.message || `Unknown error occurred during registration.`);
+      }
+    }
 export async function login(userData:ILoginProps) {
   try {
     const res = await fetch(`${APIURL}/users/login`,{

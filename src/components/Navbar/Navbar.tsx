@@ -1,10 +1,11 @@
 "use client";
-import Image from 'next/image';
+
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import categoriesToPreLoad from "@/helpers/preLoadCategories";
 import { useAuth } from "@/context/AuthContext";
 import Search from "../Search/search";
+import Image from "next/image";
 
 const Navbar = () => {
   const { userData } = useAuth();
@@ -12,13 +13,11 @@ const Navbar = () => {
   const [windowSize, setWindowSize] = useState([1200, 800]);
 
   useEffect(() => {
-    
-    const windowSizeHandler = () => {
+     const windowSizeHandler = () => {
       setWindowSize([window.innerWidth, window.innerHeight]);
       if (window.innerWidth <720) { setIsMenuOpen(false)   };
     }
-   
-    windowSizeHandler();
+     windowSizeHandler();
 
     
     window.addEventListener("resize", windowSizeHandler);
@@ -46,10 +45,11 @@ const Navbar = () => {
             <div className="absolute  left-0 w-auto bg-white rounded-lg p-2 shadow-lg z-10">
               <div className="flex flex-col">
                 {categoriesToPreLoad.map((category) => (
-                  <Link key={category.id} href={`/category/${category.id}`}>
-                    <label className="text-xs font-medium block py-1 cursor-pointer hover:bg-gray-200">
+                  <Link key={category.id} href={`/category/${category.id}`}
+                  onClick={() => setIsMenuOpen(false)}>
+                    <button className="text-xs font-medium block py-1 cursor-pointer hover:bg-gray-200">
                       {category.name}
-                    </label>
+                    </button>
                   </Link>
                 ))}
               </div>
@@ -59,12 +59,13 @@ const Navbar = () => {
         <div className="flex justify-center items-center">
           <Link href="/">
             <div className="flex ">
-            <Image
-  src="/logo/logo-removebg-preview.png"
-  alt="X Logo"
-  width={100}
-  height={100} 
-/>
+              <Image
+                src="/logo/logo-removebg-preview.png"
+                alt="X Logo"
+                width={100}
+                height={50}
+                priority={true}
+              />
               <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900">
                 {" "}
                 ELECTRO OUTLET{" "}
