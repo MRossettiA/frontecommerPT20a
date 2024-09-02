@@ -28,7 +28,7 @@ const SearchProduct = () => {
           ))}
         </div>
       ) : (
-        <p>No products found for '{searchProduct}'</p>
+        <p>No products found for "{searchProduct}"</p>
       )}
     </div>
   );

@@ -8,14 +8,15 @@ export interface AuthContextProps{
 }
 
 export const AuthContext = createContext<AuthContextProps>({
-    userData: null,
-    setUserData: () => {}
+  userData: null,
+  setUserData: () => {}
 })
 
 
 export const AuthProvider: React.FC<{ children: React.ReactNode}> = ({children}: { children: React.ReactNode}) => {
-    const [userData, setUserData] = useState<userSession | null>(null)
-
+  const [userData, setUserData] = useState<userSession | null>(null)
+  
+ 
     useEffect(()=>{
       if(userData){
         localStorage.setItem("userSession", JSON.stringify({token: userData.token, userData: userData.userData}))
@@ -31,4 +32,5 @@ export const AuthProvider: React.FC<{ children: React.ReactNode}> = ({children}:
   )
 }
 
-export const useAuth =()=> useContext(AuthContext)
+export const useAuth = () => useContext(AuthContext)
+;
