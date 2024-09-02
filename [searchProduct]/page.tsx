@@ -28,7 +28,11 @@ const SearchProduct = () => {
           ))}
         </div>
       ) : (
-        <p>No products found for &quot;{searchProduct}&quot;</p>
+        <p>
+  {/* eslint-disable-next-line react/no-unescaped-entities */}
+  No products found for "{searchProduct}"
+</p>
+
       )}
     </div>
   );
